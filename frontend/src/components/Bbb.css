@@ -1,0 +1,20 @@
+.bbb-section {
+  display: none;
+}
+@media (max-width: 768px) {
+  .bbb-section {
+    position: fixed;
+    bottom: 2vh;
+    left: 2vw;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+  }
+
+  #bbb {
+    height: 7.5vh;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,117 @@
+/* Hidden by default */
+.ham-nav {
+    display: none;
+  }
+  
+  @media (max-width: 491px) {
+    .ham-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1rem;
+      background: rgba(255, 255, 255, 0.6);
+      position: sticky;
+      top: 0;
+      z-index: 15;
+    }
+  
+    .ham-logo {
+      height: 38px;
+    }
+  
+    .ham-call-btn {
+      background-color: #f55353;
+      color: #f6e34d;
+      font-family: var(--bebas);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 3.5vw;
+      border: none;
+      border-radius: 9px;
+    }
+  
+    .ham-call-icon {
+      height: 1.1rem;
+    }
+  
+    .ham-menu-icon {
+      height: 5vw;
+      cursor: pointer;
+    }
+  
+    /* Overlay base styles */
+    .ham-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff0db;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+  
+    .ham-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  
+    .ham-overlay.closed {
+      opacity: 0;
+      pointer-events: none;
+    }
+  
+    .ham-overlay-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .ham-menu-logo {
+      height: 38px;
+    }
+  
+    .ham-close-icon {
+      height: 28px;
+      cursor: pointer;
+    }
+  
+    .ham-links {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      text-align: center;
+    }
+  
+    .ham-links a {
+      font-family: var(--bebas);
+      font-size: 1.4rem;
+      text-decoration: none;
+      color: black;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+  
+    .ham-links a:hover {
+      color: #f55353;
+    }
+  
+  
+  
+    /* Active link style (like hover) */
+    .ham-links a.active {
+      color: #f55353;
+    }
+  
+  }
+  

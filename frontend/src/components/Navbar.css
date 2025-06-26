@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.8vh;
+  padding-bottom: 0.5vh;
+  background: #000304; /* translucent white */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transform: translateY(-100%);
+  animation: slideDown 0.8s ease forwards;
+}
+
+/* Define the slide down animation */
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+  }
+}
+
+#menu {  gap: 4vw;
+  font-family: var(--bebas);
+  display: flex;
+  letter-spacing: 0.02vw;
+}
+
+.mnu {
+  position: relative;
+  text-wrap: nowrap;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff; /* default color */
+  transition: color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.mnu::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #A6CE2E;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+#lgo{
+  width: 8vw;
+}
+.mnu:hover {
+  color: #A6CE2E;
+}
+
+.mnu:hover::after {
+  transform: scaleX(1);
+}
+
+#nav-btn {
+  font-weight: 100;
+  padding: 1vh 1.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--bebas);
+  border-radius: 9px;
+  color: #000;
+  border: none;
+  background-color: #A6CE2E;
+  letter-spacing: 0.08vw;
+  gap: 0.1vw;
+  font-size: 1.25vw;
+}
+
+#phn {
+  height: 2.3vh;
+}
+#nav-btn:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+@media (max-width: 768px) {
+  .mnu{
+    font-size: 1.6vw;
+  }
+}
+@media (max-width: 491px) {
+  .nav{
+    display: none;
+  };
+}

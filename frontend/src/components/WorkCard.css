@@ -1,0 +1,46 @@
+.work-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 3vh 2vw;
+  max-width: 250px;
+  min-height: 30vh; /* ✅ Fixed consistent height */
+  background: white;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Start content from top */
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+}
+
+.work-step {
+  color: #A6CE2E;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 0.5vh;
+}
+
+.work-step-desc {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1vh;
+  font-style: italic;
+}
+
+.work-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0d2a53;
+  margin-bottom: 1vh;
+}
+
+.work-card-desc {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}

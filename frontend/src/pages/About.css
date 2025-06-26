@@ -1,0 +1,347 @@
+/* --- Base Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* --- About Section --- */
+  .about-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../assets/personImage.png');
+    background-size: cover;
+    background-position: top%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .about-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .about-content {
+    color: white;
+    max-width: 1200px;
+    text-align: center;
+  }
+  
+  .about-heading {
+    color: #A6CE2E;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+  
+  .about-icon img {
+    height: 40px;
+    margin: 0.5rem auto 1rem;
+  }
+  
+  .about-subheading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+  }
+  
+  .about-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+ .stat-box {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  min-width: 200px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.stat-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  background: rgba(255, 193, 7, 0.1);
+}
+
+  
+  .stat-box h3 {
+    font-size: 2rem;
+    color: #A6CE2E;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-box p {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .stat-icon {
+    height: 40px;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* --- Choose Us Section --- */
+  #choose-us {
+    margin-top: 7vh;
+    margin-left: 5vw;
+  }
+  
+  #choose-us .highlight-text {
+    color: #A6CE2E;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  #points {
+    padding: 0vh 1.5vw;
+  }
+  
+  #vinh2 {
+    font-family: 'Blinker';
+    margin: 0.2rem 0;
+    font-size: 1.2rem;
+    text-align: left;
+    margin-top: 2vh;
+  }
+  
+  #vn {
+    font-weight: 500;
+  }
+  
+  /* --- Transmission Form CTA Section --- */
+  #transmission1 {
+    position: relative;
+    height: 90vh;
+    
+    background-image: url('../assets/engbg2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  #transmission-left,
+  #transmission-right {
+    position: relative;
+    z-index: 2;
+  }
+  
+  #transmission-left {
+    animation: fadeLeft 1.2s ease forwards;
+    opacity: 0;
+    
+    animation-delay: 0.2s;
+  }
+  
+  #transmission-right {
+    animation: fadeRight 1.2s ease forwards;
+    opacity: 0;
+    animation-delay: 0.2s;
+    
+  }
+  
+  #transmission-head {
+    font-family: var(--bebas);
+    color: #fff;
+    letter-spacing: 0.05vw;
+    font-size: 4vh;
+  }
+  
+  .transmission-hd {
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+  
+  #transmission-sub {
+    margin-top: 1.5vh;
+  }
+  
+  #transmission-sb {
+    color: #fff;
+    font-size: 2.5vh;
+    font-weight: 300;
+  }
+  
+  #thr {
+    margin-top: 2vh;
+    color: red;
+    font-family: 'Blinker';
+    font-size: 4vh;
+  }
+  
+  #transmission-btn {
+    font-weight: 300;
+    padding: 1vh 1.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--bebas);
+    border-radius: 9px;
+    color: #143f6b;
+    border: none;
+    background-color: #A6CE2E;
+    letter-spacing: 0.05vw;
+    gap: 0.4vw;
+    font-size: 2.4vh;
+    margin-top: 1.5vh;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  #transmission-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  #blucl {
+    height: 2.3vh;
+    margin-bottom: 0.2vh;
+  }
+  
+  /* --- Animations --- */
+  @keyframes fadeLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeRight {
+    0% {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* --- Responsive --- */
+  @media screen and (max-width: 1024px) {
+    .about-section {
+      height: auto;
+      padding: 4rem 2rem;
+    }
+  
+    #transmission1 {
+      flex-direction: column;
+      height: auto;
+      padding: 4vh 4vw;
+      gap: 3vh;
+    }
+  
+    #transmission-left,
+    #transmission-right {
+      width: 100%;
+      text-align: center;
+    }
+  
+    #transmission-head {
+      font-size: 3.2vh;
+    }
+  
+    #transmission-btn {
+      margin: 2vh auto;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about-subheading {
+      font-size: 1.2rem;
+    }
+  
+    .about-description {
+      font-size: 0.95rem;
+    }
+  
+    .stat-box h3 {
+      font-size: 1.5rem;
+    }
+  
+    .stat-box p {
+      font-size: 0.95rem;
+    }
+  
+    #transmission1 {
+      padding: 4vh 4vw;
+      gap: 4vh;
+    }
+  
+    #transmission-head {
+      font-size: 3vh;
+    }
+  
+    #transmission-sb {
+      font-size: 2vh;
+    }
+  
+    #transmission-btn {
+      font-size: 2vh;
+      margin: 2vh auto;
+    }
+  
+    #vinh2 {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .about-heading {
+      font-size: 2rem;
+    }
+  
+    .about-subheading {
+      font-size: 1rem;
+    }
+  
+    .about-description {
+      font-size: 0.9rem;
+    }
+  
+    .about-stats {
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+  
+    #vinh2 {
+      font-size: 1rem;
+    }
+  }
+  

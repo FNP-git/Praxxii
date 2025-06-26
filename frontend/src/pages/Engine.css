@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#engine {
+  position: relative;
+  height: 90vh;
+  background-image: url('../assets/engbg.png');
+  background-size: cover;
+  background-position: center 15%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+#thr{
+  margin-top: 2vh;
+  color: red;
+  font-family: 'Blinker';
+  font-size: 4vh
+}
+
+
+#engine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+#engine-left,
+#engine-right {
+  position: relative;
+  z-index: 2;
+}
+
+#engine-left {
+  animation: fadeLeft 1.2s ease forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+#engine-right {
+  animation: fadeRight 1.2s ease forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+#auth,
+#trust,
+#bbb1,
+#dmca {
+  height: 8vh;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#bbb1:hover,
+#trust:hover,
+#dmca:hover {
+  transform: scale(1.1);
+}
+
+#ylw {
+  color: #A6CE2E;
+}
+
+#cert {
+  display: flex;
+  gap: 2vw;
+}
+
+#engine-head {
+  font-family: var(--bebas);
+  color: #fff;
+  letter-spacing: 0.05vw;
+  font-size: 4vh;
+}
+
+.engine-hd {
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+#engine-sb {
+  color: #fff;
+  font-size: 2.5vh;
+  font-weight: 300;
+}
+
+#engine-btn {
+  font-weight: 300;
+  padding: 1vh 1.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--bebas);
+  border-radius: 9px;
+  color: #143f6b;
+  border: none;
+  background-color: #A6CE2E;
+  letter-spacing: 0.05vw;
+  gap: 0.4vw;
+  font-size: 2.4vh;
+  margin-top: 1.5vh;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#engine-btn:hover {
+  transform: scale(1.1);
+}
+
+#blucl {
+  height: 2.3vh;
+  margin-bottom: 0.2vh;
+}
+#engine1 {
+  position: relative;
+  height: auto;
+    background: url(../assets/frmbg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (max-width: 1024px) {
+  #engine {
+    flex-direction: column;
+    height: auto;
+    padding: 4vh 4vw;
+    gap: 3vh;
+  }
+
+  #engine-left,
+  #engine-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  #engine-head {
+    font-size: 3.2vh;
+  }
+
+  #engine-btn {
+    margin: 2vh auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #engine {
+    flex-direction: column;
+    height: auto;
+    padding: 4vh 4vw;
+    gap: 4vh;
+  }
+
+  #engine-left,
+  #engine-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  #cert {
+    justify-content: center;
+  }
+
+  #engine-head {
+    font-size: 3vh;
+  }
+
+  #engine-sb {
+    font-size: 2vh;
+  }
+
+  #engine-btn {
+    font-size: 2vh;
+    margin: 2vh auto;
+  }
+  #engbg2{
+    display: none;
+  }
+}
+@media (max-width: 690px) {
+#engine1{
+  flex-direction: column;
+  padding: 4vh 0vw;;
+}
+
+}
+@media (max-width: 360px) {
+  #engine1{
+    padding: 4vh 2vw;;
+  }
+  #vin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  }

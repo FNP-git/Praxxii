@@ -1,0 +1,21 @@
+.blog-section {
+  padding: 6vh 4vw;
+}
+
+.blog-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #f7a800; /* Accent color */
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.blog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.subhead {
+  font-family: 'blinker';
+  font-weight: 600;
+}

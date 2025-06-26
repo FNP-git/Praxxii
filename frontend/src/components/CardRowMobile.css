@@ -1,0 +1,26 @@
+.mobile-card-container {
+    display: none;
+  }
+  
+  @media (max-width: 750px) {
+    .mobile-card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: auto;
+      margin: 10vh auto;
+      margin-bottom: 0vh;
+      padding: 2vh 0;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    }
+  
+    .mobile-card {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1rem;
+    }
+  }
+  

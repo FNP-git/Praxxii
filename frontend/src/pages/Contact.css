@@ -1,0 +1,206 @@
+.contact-form-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 4rem 13vw;
+    background: #fff9f0;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .contact-left {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .contact-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: #111;
+  }
+  
+  .contact-subheading {
+    font-family: 'Blinker', sans-serif;
+    font-size: 1rem;
+    margin: 0.8rem 0 1.5rem;
+    color: #fff;
+    font-weight: 500;
+  }
+  .contact-sub-alt {
+    font-family: 'Blinker', sans-serif;
+    font-size: 1.2rem;
+    margin: 0.8rem 0 1.5rem;
+    color: #000;
+    font-weight: 600;
+  }
+  
+  .badge-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  
+  .badge-grid img {
+    height: 50px;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+  }
+  
+  .badge-grid img:hover {
+    transform: scale(1.05);
+  }
+  
+  .follow-label {
+    color: #ef4444;
+    font-family: 'Blinker', sans-serif;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1.2rem;
+    font-size: 1.1rem;
+    color: #111;
+  }
+  
+  .contact-form-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 420px;
+  }
+.contact-section {
+    width: 100%;
+    height: 60vh;
+    background-image: url('../assets/contbg.png'); /* Replace with actual image */
+    background-size: cover;
+    background-position: center 5%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-overlay {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .contact-text {
+    color: white;
+    max-width: 800px;
+  }
+  
+  .contact-title {
+    color: #A6CE2E;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-subheading {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-desc {
+    font-size: 1rem;
+    color: #e4e4e4;
+    line-height: 1.6;
+  }
+  .contact-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 3rem 2rem;
+    background: #fef9f3;
+  }
+  
+  .contact-card {
+    background: #ffeed2;
+    border: 2px solid #ffe0b2;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    text-align: left;
+    font-family: 'Blinker', sans-serif;
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .contact-icon {
+    background: #0f3557;
+    border-radius: 50%;
+    height: 45px;
+    position: absolute;
+    top: -18px;
+    left: 18px;
+  }
+  
+  .contact-card h4 {
+    margin-top: 2.2rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f3557;
+  }
+  
+  .contact-card p {
+    font-size: 0.95rem;
+    color: #333;
+    margin-top: 0.3rem;
+  }
+  
+  .link-card {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .contact-form-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 2rem;
+      }
+    
+      .contact-form-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+    .contact-title {
+      font-size: 2rem;
+    }
+  
+    .contact-subheading {
+      font-size: 1.1rem;
+    }
+  
+    .contact-desc {
+      font-size: 0.95rem;
+    }
+  }
+  @media screen and (max-width: 340px) {
+
+  .contact-form-wrapper {
+    padding: 4rem 0vw;
+  
+  }
+}

@@ -1,0 +1,87 @@
+.footer {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 3vh 5vw;
+  font-family: 'Blinker', sans-serif;
+  font-size: 0.9rem;
+  min-height: 40vh;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 180px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-section h4 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #A6CE2E;
+  transform: scale(1.05);
+}
+
+.footer-section p {
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+
+.social-icons a {
+  font-size: 1.1rem;
+  color: white;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #A6CE2E;
+  transform: scale(1.1);
+}
+
+.footer-divider {
+  margin: 2rem 0 1rem;
+  border: none;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+#authc {
+  display: flex;
+  height: 10vh;
+  margin-left: 1vw;
+}
+#authc:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}

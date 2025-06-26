@@ -1,0 +1,174 @@
+.form-container {
+  padding: 2vh 2vw;
+  background: rgba(0, 0, 0, 0.5); /* translucent dark */
+  border-radius: 15px;
+  border: 1px solid #A6CE2E;
+  color: #fff;
+  width: 30vw;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+
+}
+
+.form-title {
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-bottom: 0.8vh;
+  color: #fff;
+}
+
+.custom-form label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0.2vh;
+  text-align: left;
+}
+
+.custom-form input {
+  padding: 0.8vh 1vw;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.3); /* translucent input bg */
+  color: white;
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 1vw;
+}
+
+.form-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.dropdown {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #000;
+  z-index: 9999;
+}
+
+.dropdown-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}
+.custom-form select {
+  padding: 0.8vh 1vw;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);         /* applies the blur behind */
+
+  color: black;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  appearance: none; /* Remove native dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Optional: Add a custom dropdown arrow */
+.custom-form select {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.7vw center;
+  background-size: 1rem;
+  padding-right: 2rem;
+}
+
+.custom-form button {
+  margin-top: 1vh;
+  padding: 1vh 1vw;
+  border-radius: 6px;
+  border: none;
+  background-color: #A6CE2E;
+  color: #000;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.custom-form button:hover {
+  background-color: #000;
+  color: #A6CE2E;
+  border: 1px solid #A6CE2E;
+}
+/* Light placeholder text for better visibility on dark inputs */
+.custom-form input::placeholder,
+.custom-form select::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55); /* Almost white */
+  opacity: 1; /* Override Firefox default */
+}
+.last-row{
+  display: flex;
+  gap: 1vw;
+}
+/* Tablets and smaller laptops (width <= 1024px) */
+@media screen and (max-width: 1024px) {
+  .form-container {
+    width: 55vw;
+    padding: 2vh 3vw;
+  }
+  #cert{
+    margin-top: 5vh;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Medium devices like tablets (width <= 768px) */
+/* All form rows stack except specific ones */
+
+
+@media screen and (max-width: 780px) {
+  .form-container {
+    width: 65vw;
+    padding: 3vh 5vw;
+  }
+
+  /* Same logic for phones */
+  .form-row {
+    flex-direction: column;
+  }
+
+  .email-zip-row,
+  .part-details-row {
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    gap: 1vw;
+  }
+
+  .email-zip-row .form-col,
+  .part-details-row .form-col {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 470px) {
+  .form-container {
+    width: 95vw;}
+}

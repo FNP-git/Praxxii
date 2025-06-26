@@ -1,0 +1,146 @@
+/* --- Base Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --- Return Section --- */
+.return-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #1f2937, #111827);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+}
+
+.return-overlay {
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.return-content {
+  text-align: center;
+}
+
+.return-heading {
+  font-size: 2.8rem;
+  color: #A6CE2E;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.return-subheading {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.return-description {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #f3f4f6;
+}
+
+.return-description h4 {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: #facc15;
+  font-weight: 600;
+}
+
+.return-description p {
+  margin: 1rem 0;
+}
+
+.return-description ul {
+  margin: 0.5rem 0 1.5rem 1.2rem;
+  padding-left: 1rem;
+  list-style-type: disc;
+}
+
+.return-description li {
+  margin-bottom: 0.6rem;
+}
+
+.return-description a {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+/* --- Responsive --- */
+@media screen and (max-width: 1024px) {
+  .return-overlay {
+    padding: 2rem 1.5rem;
+  }
+
+  .return-heading {
+    font-size: 2.2rem;
+  }
+
+  .return-subheading {
+    font-size: 1.2rem;
+  }
+
+  .return-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .return-heading {
+    font-size: 2rem;
+  }
+
+  .return-subheading {
+    font-size: 1.1rem;
+  }
+
+  .return-description h4 {
+    font-size: 1.1rem;
+  }
+
+  .return-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .return-section {
+    padding: 3rem 1rem;
+  }
+
+  .return-heading {
+    font-size: 1.7rem;
+  }
+
+  .return-subheading {
+    font-size: 1rem;
+  }
+
+  .return-description {
+    font-size: 0.85rem;
+  }
+
+  .return-description h4 {
+    font-size: 1rem;
+  }
+}

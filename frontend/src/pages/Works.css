@@ -1,0 +1,211 @@
+/* === KEYFRAME ANIMATIONS === */
+@keyframes truckTravel {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(45vw); /* Truck moves toward center/right */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Apply to truck */
+.truck-left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 18vmax;
+}
+
+/* Animation class added only when visible */
+.truck-animate {
+  animation: truckTravel 4s ease-in-out forwards;
+}
+
+@keyframes fadeUpWorks {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeftWorks {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === SCROLL CLASSES === */
+.fade-up-works {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.fade-up-works.visible {
+  animation: fadeUpWorks 1s ease forwards;
+}
+
+.slide-left-works {
+  opacity: 0;
+  transform: translateX(0); /* Important: stays at initial */
+}
+
+.slide-left-works.visible {
+  animation: slideInLeftWorks 1s ease forwards;
+}
+
+/* === PAGE STYLING (same as before) === */
+#works-section {
+  padding: 8vh 8vw;
+  background-color: #fefefe;
+  font-family: 'Blinker';
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Header */
+.works-header {
+  text-align: center;
+  margin-bottom: 5vh;
+}
+.works-subtitle {
+  color: #A6CE2E;
+  font-size: 2.5vmax;
+  text-transform: uppercase;
+  font-family: var(--bebas);
+  margin-bottom: 1vh;
+  font-weight: 500;
+}
+.works-main-title {
+  font-size: 2vmax;
+  color: #0d2a53;
+  font-weight: 600;
+  margin-bottom: 2vh;
+}
+
+/* Cards */
+.works-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5vw;
+  margin-bottom: 8vh;
+}
+.work-card {
+  border: 1px solid #000; /* black border */
+  border-radius: 12px;
+  padding: 3vh 2vw;
+  width: 250px;
+  background: white;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+.work-step {
+  color: #A6CE2E;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.work-step-desc {
+  font-size: 0.7rem;
+  color: #000;
+  margin: 0.5vh 0 1vh;
+}
+.work-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0d2a53;
+  margin-bottom: 1vh;
+}
+.work-card-desc {
+  font-size: 0.8rem;
+  color: #000;
+  line-height: 1.3;
+}
+
+/* Footer */
+.works-footer {
+  text-align: center;
+  margin-top: 4vh;
+}
+.works-footer-title {
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 2vh;
+}
+.works-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+.works-btn {
+  padding: 1vh 2vw;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.works-btn.call {
+  background: #ffffff;
+  border: 2px solid #f55353;
+  color: #0d2a53;
+}
+.works-btn.register {
+  background: #f55353;
+  color: #f6f54d;
+    border: 2px solid #f55353;
+
+}
+.works-btn.register:hover {
+  transform: scale(1.1);
+}
+.works-btn.call:hover {
+  transform: scale(1.1);
+}
+
+/* Bottom Images */
+.works-bottom-images {
+  position: relative;
+  margin-top: 8vh;
+}
+.truck-left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 18vmax;
+}
+.line-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0.3vh;
+  width: 50vmax;
+}
+.house-right {
+  position: absolute;
+  right: 0;
+  bottom: -2vh;
+  width: 18vmax;
+}
+@media (max-width: 470px) {
+  .works-subtitle {
+    font-size: 5vmax;
+  }
+  .works-main-title {
+    font-size: 3vmax;
+  }
+  .works-bottom-images{
+    display: none;
+  }
+}

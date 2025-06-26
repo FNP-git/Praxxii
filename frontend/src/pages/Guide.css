@@ -1,0 +1,58 @@
+#guide-section {
+  padding: 8vh 8vw;
+  background-color: #fefefe;
+  font-family: 'Blinker', sans-serif;
+  text-align: center;
+}
+
+.guide-subtitle {
+  color: #A6CE2E;
+  font-size: 2.2vmax;
+  text-transform: uppercase;
+  font-family: var(--bebas);
+  margin-bottom: 1vh;
+  font-weight: 600;
+}
+
+.guide-main-title {
+  font-size: 2vmax;
+  color: #0d2a53;
+  font-weight: 600;
+  margin-bottom: 5vh;
+}
+
+.guide-cards-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4vw;
+}
+
+@media (max-width: 768px) {
+  .guide-subtitle {
+    font-size: 4vmax;
+  }
+
+  .guide-main-title {
+    font-size: 2.8vmax;
+  }
+
+  .guide-cards-wrapper {
+    gap: 5vw;
+  }
+}
+@media (max-width: 600px) {
+  
+.guide-subtitle {
+  font-size: 5vmax;
+}
+
+.guide-main-title {
+  font-size: 3vmax;
+}
+
+.guide-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+}}

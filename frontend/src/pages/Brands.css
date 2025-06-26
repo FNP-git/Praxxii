@@ -1,0 +1,68 @@
+.brands-section {
+  background-color: #fff;
+  padding: 20px 20px;
+}
+
+.brands-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: #ffaa2b;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  font-family: var(--bebas);
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+.slide-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 40s linear infinite;
+}
+
+.slider-right .slide-track {
+  animation: scroll-right 40s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .brands-title {
+    font-size: 4vmax;
+  }
+
+  .brand-card {
+    width: 140px;
+    height: 140px;
+  }
+
+  .brand-logo {
+    width: 85px;
+  }
+
+  .brand-name {
+    font-size: 0.85rem;
+  }
+}

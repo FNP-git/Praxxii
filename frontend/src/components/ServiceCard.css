@@ -1,0 +1,76 @@
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5vmax;
+  margin-bottom: 3vh;
+}
+
+.service-icon img {
+  width: 3vmax;
+  height: 3vmax;
+  object-fit: contain;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-title {
+  font-size: 1.4vmax;
+  color: #0d2a53;
+  font-weight: 600;
+  margin-bottom: 1vh;
+}
+
+.service-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-point {
+  font-size: 0.9vmax;
+  color: #333;
+  margin-bottom: 0.8vh;
+}
+@media (max-width: 768px) {
+  .service-card {
+    gap: 1vmax;
+  }
+  
+  .service-icon img {
+    width: 5vmax;
+    height: 5vmax;
+  }
+  
+  .service-title {
+    font-size: 2.2vmax;
+    margin-bottom: 1vh;
+  }
+  
+  .service-point {
+    font-size: 1.5vmax;
+    margin-bottom: 0.8vh;
+  }
+}
+@media (max-width: 470px) {
+  .service-card {
+    gap: 1vmax;
+  }
+  
+  .service-icon img {
+    width: 6vmax;
+    height: 6vmax;
+  }
+  
+  .service-title {
+    font-size: 2.7vmax;
+    margin-bottom: 1vh;
+  }
+  
+  .service-point {
+    font-size: 2.1vmax;
+    margin-bottom: 0.8vh;
+  }
+}

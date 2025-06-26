@@ -1,0 +1,227 @@
+/* === ANIMATIONS === */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === GENERAL SCROLL CLASSES === */
+.fade-up-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-up-on-scroll.visible {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.slide-left-on-scroll {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+.slide-left-on-scroll.visible {
+  animation: slideInLeft 1.2s ease forwards;
+  animation-delay: 0.8s; /* Appears after slight delay */
+}
+
+.slide-right-on-scroll {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease;
+}
+
+.slide-right-on-scroll.visible {
+  animation: slideInRight 1.2s ease forwards;
+  animation-delay: 1.5s; /* Appears 1 second after left */
+}
+
+/* === SCAMS SECTION === */
+#scm {
+  margin-top: 15vh;
+  padding: 5vh 8vw;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Top headings */
+.scam-warning {
+  color: #A6CE2E;
+  font-weight: 500;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 0.8px;
+  font-family: var(--bebas);
+}
+
+.scam-main-heading {
+  font-size: 2.3rem;
+  text-align: left;
+  font-weight: 600;
+  color: #0d2a53;
+  margin: 1vh 0 1.5vh;
+}
+
+.scam-description {
+  text-align: left;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5vh;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #A6CE2E;
+  font-weight: 600;
+}
+
+/* Scam page layout */
+.scam-page {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0vh 8vw;
+  gap: 5vw;
+}
+
+.scam-box {
+  display: flex;
+  flex: 1;
+  position: relative;
+  align-items: center;
+}
+
+/* Images */
+.scam-side-img1 {
+  height: auto;
+  max-width: 10.5vmax;
+  position: absolute;
+  left: -8vw;
+  bottom: 0vh;
+}
+
+.scam-side-img2 {
+  height: auto;
+  max-width: 10vmax;
+  position: absolute;
+  right: -4vw;
+  bottom: 0vh;
+}
+.scam-highlight-phone {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Footer */
+.scam-footer {
+  text-align: center;
+  margin-top: 5vh;
+  font-size: 1.05rem;
+}
+
+.scam-highlight-phone {
+  color: #f55353;
+  font-weight: 600;
+}
+@media (max-width: 1390px) {
+  .scam-side-img1 {
+    left: -11vw;
+    bottom: 0vh;
+  }
+  .scam-side-img2 {
+    right: -8vw;
+  }}
+@media (max-width: 1024px) {
+.scam-page{
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.scam-side-img1 {
+  height: auto;
+  max-width: 22vmax;
+  position: absolute;
+  left: -14vw;
+  bottom: -1.5vh;
+}
+.scam-side-img2 {
+  height: auto;
+  max-width: 22vmax;
+  position: absolute;
+  right: -8vw;
+  bottom: -2vh;
+}
+}
+@media (max-width: 600px) {
+  #scm {
+    margin-top: 5vh;}
+  .scam-warning {
+    font-size: 1.7rem;
+    text-align: left;
+  }
+  
+  .scam-main-heading {
+    font-size: 1.7rem;
+    text-align: left;
+  }
+  
+  .scam-description {
+    text-align: left;
+    font-size: 1rem;
+  }
+  .scam-side-img1 {
+    height: auto;
+    max-width: 22vmax;
+    position: absolute;
+    left: -14vw;
+    bottom: 2vh;
+  }
+  .scam-page {
+    padding: 0vh 4vw;
+  }
+  #scm {
+    padding: 5vh 4vw;
+  }
+}
+@media (max-width: 492px) {
+  
+  
+  .scam-side-img1{
+    display: none;
+  }
+  .scam-side-img2{
+    display: none;
+  }
+}
