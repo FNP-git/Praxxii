@@ -12,7 +12,7 @@ const Form = () => {
   const [errors, setErrors] = useState({});
 
   const [formData, setFormData] = useState({
-    leadLabel: "FNPAUTOPARTS",
+    leadLabel: "PRAXXII GLOBAL",
     fullName: "",
     phone: "",
     year: "",
@@ -109,43 +109,11 @@ const response = await fetch("/api/form", {
       } else {
   alert("Form submitted successfully!");
 
-  // ✅ Google Ads Conversion Tracking
-  if (typeof gtag === "function") {
-    gtag('event', 'conversion', {
-      'send_to': 'AW-16900543345/bA93CJSci6YaEPGm5_o-',
-      'event_callback': () => {
-        console.log("✅ Google Ads conversion fired");
-      }
-    });
-  //    gtag('event', 'conversion', {
-  //   'send_to': 'AW-17259924611/L5XWCNKyreEaEIOZlqZA',
-  //   'value': 1.0,
-  //   'currency': 'USD',
-  //   'event_callback': () => {
-  //     console.log("✅ Google Ads conversion (2) fired");
-  //   }
-  // });
-  }
 
-  // ✅ Bing UET Conversion Tracking
-  if (typeof uetq !== "undefined") {
-    uetq.push('event', '', {
-      'event_category': 'Lead',
-      'event_action': 'Form Submission',
-      'event_label': 'FNP Inquiry'
-    });
-    uetq.push('set', {
-      'pid': {
-        'em': formData.email || "",
-        'ph': formData.phone || ""
-      }
-    });
-    console.log("✅ Bing UET event fired");
-  }
 
   // ✅ Reset form
   setFormData({
-    leadLabel: "FNPAUTOPARTS",
+    leadLabel: "PRAXXII GLOBAL",
     fullName: "",
     phone: "",
     year: "",

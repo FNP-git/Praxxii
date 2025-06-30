@@ -7,7 +7,7 @@ const app = express();
 
 const allowedOrigins = [
   'https://praxxiiglobal.com',
-  'https://www.praxxiiglobal.com.com',
+  'https://www.praxxiiglobal.com',
   'http://localhost',
   'http://localhost:5006',
   'http://localhost:5173',
