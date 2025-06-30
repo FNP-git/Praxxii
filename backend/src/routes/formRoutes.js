@@ -86,7 +86,7 @@ router.post("/form", validateForm, async (req, res) => {
 
     const mailOptions = {
       from: `"Praxxii Global" <autopartslead9@gmail.com>`,
-      to: "devops@fnpglobal.com",
+      to: "info@praxxiiglobal.com",
       subject: "New Form Submission Praxxii Global",
       text:
         `Company: ${leadLabel}\n` +
