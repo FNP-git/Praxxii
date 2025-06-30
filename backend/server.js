@@ -21,6 +21,11 @@ app.use(cors({
   credentials: true,
 }));
 app.use(express.json());
+app.use((req, res, next) => {
+  console.log(`[DEBUG] Incoming: ${req.method} ${req.url}`);
+  next();
+});
+
 
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
