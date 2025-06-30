@@ -9,40 +9,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
-  <!-- ✅ Corrected preload MIME types -->
-  <link rel="preload" as="image" href="/hmbg.jpg" type="image/jpeg">
-  <link rel="preload" as="image" href="/engbg.jpeg" type="image/jpeg">
+  <link rel="preload" as="image" href="/hmbg.png" type="image/png">
+  <link rel="preload" as="image" href="/engbg.png" type="image/jpeg">
   <link rel="preload" as="image" href="/transbg.png" type="image/png">
 
   <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✅ Google tag (gtag.js) - correctly loaded -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16900543345"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'AW-16900543345');
-    // gtag('config', 'AW-17259924611');
-  </script>
-
-  <!-- ✅ Bing UET - fix protocol to use HTTPS -->
-  <script>
-    (function(w,d,t,r,u){
-      var f,n,i;
-      w[u]=w[u]||[],f=function(){
-        var o={ti:"187179742", enableAutoSpaTracking: true};
-        o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad");
-      },
-      n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){
-        var s=this.readyState;
-        s && s!=="loaded" && s!=="complete" || (f(),n.onload=n.onreadystatechange=null);
-      },
-      i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i);
-    })(window,document,"script","https://bat.bing.com/bat.js","uetq");
-  </script>
 
   <title>Premium car engines and transmissions available at Praxxii Global</title>
 </head>
