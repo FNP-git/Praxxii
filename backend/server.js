@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
   res.send("Praxxii Global Backend is Running!");
 });
 
-app.use("/api/form", formRoutes);
+app.use("/api", formRoutes);
 
 // ✅ Start Server
 const PORT = process.env.PORT || 5006;

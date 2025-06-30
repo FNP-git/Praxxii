@@ -62,7 +62,7 @@ router.get("/", (req, res) => {
 });
 
 // POST route for form submission
-router.post("/", validateForm, async (req, res) => {
+router.post("/form", validateForm, async (req, res) => {
   try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
