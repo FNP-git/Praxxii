@@ -32,7 +32,7 @@ const Scams = () => {
       <div id="top-part" className="fade-up-on-scroll">
         <h3 className="scam-warning">BEWARE OF AUTO PARTS SCAMS</h3>
         <h2 className="scam-main-heading">
-          “Don’t Get Scammed. Here’s What To Watch Out For — And How FNP Protects You.”
+          “Don’t Get Scammed. Here’s What To Watch Out For — And How Praxxii Global Protects You.”
         </h2>
         <p className="scam-description">
           The auto parts industry has seen a rise in fraudulent sellers offering{' '}
@@ -69,7 +69,7 @@ const Scams = () => {
       <div className="scam-footer fade-up-on-scroll">
   <p>
     <strong>“Have questions or think you’ve seen a scam? Call us at </strong>
-    <a className="scam-highlight-phone" href="tel:18888079696">📞 +15082296373</a>
+    <a className="scam-highlight-phone" href="tel:15082296373">📞 +15082296373</a>
     <strong> — we’ll help you avoid it.”</strong>
   </p>
 </div>

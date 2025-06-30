@@ -17,7 +17,7 @@ const Privacy = () => {
             <h3 className="privacy-subheading">Praxxii Global Privacy Practices</h3>
 
             <div className="privacy-description">
-              <p>Praxxii Global ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you visit our website (www.fnpautoparts.com) and purchase our products.</p>
+              <p>Praxxii Global ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you visit our website (www.praxxiiglobal.com) and purchase our products.</p>
 
               <h4>1. Information We Collect</h4>
               <p><strong>a. Personal Information</strong></p>

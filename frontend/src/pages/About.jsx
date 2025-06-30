@@ -105,8 +105,9 @@ const About = () => {
             <h5 id="thr">You're almost there <img id='redarw' src={redarw} alt="" /></h5>
           </div>
           <div>
-          <a href="tel:+18888079696" style={{ textDecoration: 'none' }}>
+          <a href="tel:+15082296373" style={{ textDecoration: 'none' }}>
   <button id="transmission-btn">
+    
     <img id="blucl" src={blucl} alt="call a specialist" />
     CALL US
   </button>

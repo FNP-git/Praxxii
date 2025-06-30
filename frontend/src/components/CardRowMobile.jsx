@@ -12,12 +12,12 @@ const CardRowMobile = () => {
       <div className="mobile-card">
         <CardItem
           icon={warranty}
-          title="UPTO 2 YEARS WARRANTY"
+          title="90 DAY WARRANTY"
           subtitle="All Of Our Products Are Covered"
         />
       </div>
       <div className="mobile-card">
-        <CardItem icon={support} title="24/7 SUPPORT" subtitle="Call Us:+1-8888079696" />
+        <CardItem icon={support} title="24/7 SUPPORT" subtitle="Call Us:+1-5082296373" />
       </div>
       <div className="mobile-card">
         <CardItem icon={delivery} title="FREE SHIPPING" subtitle="Nation-wide free shipping" />

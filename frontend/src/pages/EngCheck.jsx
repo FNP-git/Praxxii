@@ -132,12 +132,12 @@ const EngCheck = () => {
           </h3>
         </div>
         <h3 id="srcal">
-          Need Help? Contact us at <a href="tel:+18888079696" style={{ textDecoration: 'underline', color: '#000' }}>+15082296373</a> Our Specialists Will Help You If Something
+          Need Help? Contact us at <a href="tel:+15082296373" style={{ textDecoration: 'underline', color: '#000' }}>+15082296373</a> Our Specialists Will Help You If Something
           Doesn't Align. <br />
           Or
         </h3>
         <div id="cldv" className="fade-up-works">
-          <a href="tel:+18888079696" style={{ textDecoration: 'none' }}>
+          <a href="tel:+15082296373" style={{ textDecoration: 'none' }}>
             <button id="clbtn">Schedule a Call</button>
           </a>
         </div>

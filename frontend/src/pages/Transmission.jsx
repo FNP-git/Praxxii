@@ -30,10 +30,12 @@ const Transmission = () => {
             <h5 id="transmission-sb">Choose Praxxii, Drive with Confidence.</h5>
           </div>
           <div>
+            <a href="tel:+15082296373" style={{ textDecoration: 'none' }}>
             <button id="transmission-btn">
               <img id="blucl" src={blucl} alt="call a specialist" />
               CALL US
             </button>
+            </a>
           </div>
         </div>
         <div id="transmission-right">

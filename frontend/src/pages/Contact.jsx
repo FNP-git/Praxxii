@@ -41,7 +41,7 @@ const Contact = () => {
 
       
 
-      <a href="tel:+18888079696" className="contact-card link-card">
+      <a href="tel:+15082296373" className="contact-card link-card">
         <img src={cllIcon} alt="Call" className="contact-icon" />
         <h4>Call Us</h4>
         <p>+15082296373</p>
