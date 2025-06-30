@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import detectBrowser from '../utils/detectBrowser'
-
+import detectBrowser from '../utils/detectBrowser';
 import './Form.css';
 
 const Form = () => {
@@ -8,7 +7,6 @@ const Form = () => {
   const [partList, setPartList] = useState([]);
   const [showMakeDropdown, setShowMakeDropdown] = useState(false);
   const [showModelDropdown, setShowModelDropdown] = useState(false);
-  const [showPartDropdown, setShowPartDropdown] = useState(false);
   const [errors, setErrors] = useState({});
 
   const [formData, setFormData] = useState({
@@ -22,7 +20,6 @@ const Form = () => {
     vin: "",
     email: "",
     zip: "",
-    // remarks:"",
     browser: "",
   });
 
@@ -37,14 +34,14 @@ const Form = () => {
       .then((data) => setPartList(data))
       .catch((err) => console.error('Error loading parts list:', err));
   }, []);
-useEffect(() => {
-  const browser = detectBrowser();
-  setFormData((prevData) => ({ ...prevData, browser }));
-}, []);
+
+  useEffect(() => {
+    const browser = detectBrowser();
+    setFormData((prevData) => ({ ...prevData, browser }));
+  }, []);
 
   const currentYear = new Date().getFullYear();
-  const years = [];
-  for (let y = 1950; y <= currentYear; y++) years.push(y);
+  const years = Array.from({ length: currentYear - 1950 + 1 }, (_, i) => 1950 + i);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,18 +51,10 @@ useEffect(() => {
   };
 
   const allMakes = Object.keys(carData).sort();
-  const filteredMakes = allMakes.filter((m) =>
-    m.toLowerCase().includes(formData.make.toLowerCase())
-  );
-
+  const filteredMakes = allMakes.filter((m) => m.toLowerCase().includes(formData.make.toLowerCase()));
   const modelsForMake = carData[formData.make] || [];
-  const filteredModels = modelsForMake.filter((mod) =>
-    mod.toLowerCase().includes(formData.model.toLowerCase())
-  );
-
-  const filteredParts = partList.filter((p) =>
-    p.toLowerCase().includes(formData.part.toLowerCase())
-  );
+  const filteredModels = modelsForMake.filter((mod) => mod.toLowerCase().includes(formData.model.toLowerCase()));
+  const filteredParts = partList.filter((p) => p.toLowerCase().includes(formData.part.toLowerCase()));
 
   const handleSelectMake = (make) => {
     setFormData({ ...formData, make, model: '' });
@@ -82,52 +71,54 @@ useEffect(() => {
     setErrors({});
 
     try {
-const response = await fetch("/api/form", {
+      const response = await fetch("/api/form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      let result;
+      const contentType = response.headers.get("content-type");
+
+      if (contentType && contentType.includes("application/json")) {
+        result = await response.json();
+      } else {
+        const text = await response.text();
+        console.error("Non-JSON response from server:", text);
+        throw new Error("Server did not return JSON");
+      }
 
       if (!response.ok) {
         const errorMessages = {};
         let alertMessage = "Please fix the following errors:\n\n";
 
         if (result.errors && Array.isArray(result.errors)) {
-  result.errors.forEach((error) => {
-    errorMessages[error.param] = error.msg;
-    alertMessage += `- ${error.msg}\n`;
-  });
-} else {
-  alertMessage += "- Unexpected error occurred. Please try again.";
-}
-
+          result.errors.forEach((error) => {
+            errorMessages[error.param] = error.msg;
+            alertMessage += `- ${error.msg}\n`;
+          });
+        } else {
+          alertMessage += "- Unexpected error occurred. Please try again.";
+        }
 
         setErrors(errorMessages);
         alert(alertMessage);
       } else {
-  alert("Form submitted successfully!");
-
-
-
-  // ✅ Reset form
-  setFormData({
-    leadLabel: "PRAXXII GLOBAL",
-    fullName: "",
-    phone: "",
-    year: "",
-    make: "",
-    model: "",
-    part: "",
-    vin: "",
-    email: "",
-    zip: "",
-    // remarks: "",
-    browser: detectBrowser(),
-  });
-}
-
+        alert("Form submitted successfully!");
+        setFormData({
+          leadLabel: "PRAXXII GLOBAL",
+          fullName: "",
+          phone: "",
+          year: "",
+          make: "",
+          model: "",
+          part: "",
+          vin: "",
+          email: "",
+          zip: "",
+          browser: detectBrowser(),
+        });
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Something went wrong. Please try again.");
@@ -145,18 +136,13 @@ const response = await fetch("/api/form", {
         <label>Phone No.*</label>
         <input type="text" name="phone" value={formData.phone} onChange={handleChange} required placeholder="Contact Number" />
 
-        
-
         <h4 className="form-title">Part Details</h4>
-
         <div className="form-row part-details-row">
           <div className="form-col">
             <label>Year*</label>
             <select name="year" value={formData.year} onChange={handleChange} required>
               <option value=""></option>
-              {years.map((y) => (
-                <option key={y} value={y}>{y}</option>
-              ))}
+              {years.map((y) => <option key={y} value={y}>{y}</option>)}
             </select>
           </div>
 
@@ -179,11 +165,7 @@ const response = await fetch("/api/form", {
               {showMakeDropdown && filteredMakes.length > 0 && (
                 <div className="dropdown">
                   {filteredMakes.map((make) => (
-                    <div
-                      key={make}
-                      onMouseDown={() => handleSelectMake(make)}
-                      className="dropdown-item"
-                    >
+                    <div key={make} onMouseDown={() => handleSelectMake(make)} className="dropdown-item">
                       {make}
                     </div>
                   ))}
@@ -214,11 +196,7 @@ const response = await fetch("/api/form", {
               {showModelDropdown && filteredModels.length > 0 && (
                 <div className="dropdown">
                   {filteredModels.map((model) => (
-                    <div
-                      key={model}
-                      onMouseDown={() => handleSelectModel(model)}
-                      className="dropdown-item"
-                    >
+                    <div key={model} onMouseDown={() => handleSelectModel(model)} className="dropdown-item">
                       {model}
                     </div>
                   ))}
@@ -229,61 +207,32 @@ const response = await fetch("/api/form", {
         </div>
 
         <div className="form-col">
-  <label>Choose Part*</label>
-  <select
-    name="part"
-    value={formData.part}
-    onChange={(e) => handleChange(e)}
-    required
-  >
-    <option value="" disabled>Select part</option>
-    {filteredParts.map((part, index) => (
-      <option key={index} value={part}>
-        {part}
-      </option>
-    ))}
-  </select>
-</div>
-
+          <label>Choose Part*</label>
+          <select name="part" value={formData.part} onChange={handleChange} required>
+            <option value="" disabled>Select part</option>
+            {filteredParts.map((part, index) => (
+              <option key={index} value={part}>{part}</option>
+            ))}
+          </select>
+        </div>
 
         <div className="form-col">
           <label>VIN Number (Optional)</label>
-          <input
-            type="text"
-            name="vin"
-            value={formData.vin}
-            onChange={handleChange}
-          />
+          <input type="text" name="vin" value={formData.vin} onChange={handleChange} />
         </div>
 
         <div className="last-row">
           <div id="l-row">
             <label>Email*</label>
-            <input
-              type="text"
-              name="email"
-              value={formData.email}
-              placeholder="email"
-              onChange={handleChange}
-              required
-            />
+            <input type="text" name="email" value={formData.email} onChange={handleChange} placeholder="email" required />
           </div>
           <div id="l-row">
             <label>Zip Code*</label>
-            <input
-              type="text"
-              name="zip"
-              value={formData.zip}
-              placeholder="ZIP"
-              onChange={handleChange}
-              required
-            />
-          </div> 
+            <input type="text" name="zip" value={formData.zip} onChange={handleChange} placeholder="ZIP" required />
+          </div>
         </div>
-        
+
         <input type="hidden" name="browser" value={formData.browser} />
-
-
         <button type="submit">Submit</button>
       </form>
     </div>
