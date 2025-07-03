@@ -83,7 +83,6 @@ const Home = ({ loading }) => {
       <Brands />
       <Testimonials />
       <Blog />
-      <Bbb />
       <Footer />
     </>
   );
