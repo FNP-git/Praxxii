@@ -17,7 +17,7 @@ const CardRowMobile = () => {
         />
       </div>
       <div className="mobile-card">
-        <CardItem icon={support} title="24/7 SUPPORT" subtitle="Call Us:+1-5082296373" />
+        <CardItem icon={support} title="24/7 SUPPORT" subtitle="Call Us:+1-5084920300" />
       </div>
       <div className="mobile-card">
         <CardItem icon={delivery} title="FREE SHIPPING" subtitle="Nation-wide free shipping" />

@@ -42,7 +42,7 @@ const Home = ({ loading }) => {
               <h5 id="hm-sb">Professionally verified auto parts, shipped with integrity.</h5>
             </div>
             <div>
-              <a href="tel:+15082296373" style={{ textDecoration: 'none' }}>
+              <a href="tel:+15084920300" style={{ textDecoration: 'none' }}>
                 <button id="cl-btn">
                   {/* <img id="blucl" src={blucl} alt="call a specialist" /> */}
                   📞 Speak to an Expert
@@ -62,7 +62,7 @@ const Home = ({ loading }) => {
               <CardItem icon={warranty} title="90 DAY WARRANTY" subtitle="All Of Our Products Are Covered" />
             </div>
             <div className="card-wrapper">
-              <CardItem icon={support} title="24/7 SUPPORT" subtitle="Call Us:+1-5082296373" />
+              <CardItem icon={support} title="24/7 SUPPORT" subtitle="Call Us:+1-5084920300" />
             </div>
           </div>
           <div id="cplr">

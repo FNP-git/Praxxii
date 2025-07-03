@@ -32,10 +32,10 @@ const HamburgerMenu = () => {
           <img src={logo} alt="fnp logo" className="ham-logo" />
         </Link>
 
-        <a href="tel:+15082296373" style={{ textDecoration: 'none' }}>
+        <a href="tel:+15084920300" style={{ textDecoration: 'none' }}>
           <button className="ham-call-btn">
             <img src={phn_y} alt="call icon" className="ham-call-icon" />
-            +15082296373
+            +15084920300
           </button>
         </a>
 

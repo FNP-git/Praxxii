@@ -41,7 +41,7 @@ const Return = () => {
               <p>Make sure all fluids are drained before return.</p>
               <p>If core returns then core also needs to be completely drained. If not then it will result in a $100.00 fee against the core deposit.</p>
 
-              <p>If you have any questions or concerns regarding the warranty or any other type of queries, feel free to contact us via email at <a href="mailto:info@praxxiiglobal.com">info@praxxiiglobal.com</a> or can call us at +1-5082296373</p>
+              <p>If you have any questions or concerns regarding the warranty or any other type of queries, feel free to contact us via email at <a href="mailto:info@praxxiiglobal.com">info@praxxiiglobal.com</a> or can call us at +1-5084920300</p>
 
               <p>Praxxii Global reserves all the rights to change or modify the warranty at any time.</p>
             </div>
