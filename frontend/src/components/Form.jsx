@@ -8,6 +8,7 @@ const Form = () => {
   const [showMakeDropdown, setShowMakeDropdown] = useState(false);
   const [showModelDropdown, setShowModelDropdown] = useState(false);
   const [errors, setErrors] = useState({});
+  const [trackingData, setTrackingData] = useState({});
 
   const [formData, setFormData] = useState({
     leadLabel: "PRAXXII GLOBAL",
@@ -22,6 +23,95 @@ const Form = () => {
     zip: "",
     browser: "",
   });
+
+  // Capture ad tracking parameters with sessionStorage persistence
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Check if we already have tracking data stored
+    const existingTracking = sessionStorage.getItem('adTrackingData');
+    let tracking;
+
+    // If current page has UTM parameters OR Google/Bing ad parameters, use them (fresh ad click)
+    if (urlParams.get('utm_source') || urlParams.get('gclid') || urlParams.get('gad_campaignid') || urlParams.get('msclkid')) {
+      tracking = {
+        utm_source: urlParams.get('utm_source') || 
+                   (urlParams.get('gclid') ? 'google' : 
+                   (urlParams.get('msclkid') ? 'bing' : 'direct')),
+        utm_medium: urlParams.get('utm_medium') || 
+                   (urlParams.get('gclid') || urlParams.get('msclkid') ? 'cpc' : 'none'),
+        utm_campaign: urlParams.get('utm_campaign') || 
+                     (urlParams.get('gad_campaignid') ? 'google_campaign_' + urlParams.get('gad_campaignid') :
+                     (urlParams.get('msclkid') ? 'bing_auto_campaign' : 'google_auto_campaign')),
+        utm_term: urlParams.get('utm_term') || '',
+        utm_content: urlParams.get('utm_content') || '',
+        utm_id: urlParams.get('utm_id') || urlParams.get('gad_campaignid') || '',
+        gclid: urlParams.get('gclid') || '',
+        msclkid: urlParams.get('msclkid') || '',
+        fbclid: urlParams.get('fbclid') || '',
+        gad_source: urlParams.get('gad_source') || '',
+        gad_campaignid: urlParams.get('gad_campaignid') || '',
+        referrer: document.referrer || 'direct',
+        landing_page: window.location.href,
+        timestamp: new Date().toISOString()
+      };
+      // Store new tracking data
+      sessionStorage.setItem('adTrackingData', JSON.stringify(tracking));
+    } 
+    // If no UTM on current page but we have stored data, use stored data
+    else if (existingTracking) {
+      tracking = JSON.parse(existingTracking);
+      // Update current page info but keep original tracking
+      tracking.current_page = window.location.href;
+    }
+    // If no UTM and no stored data, check referrer
+    else {
+      tracking = {
+        utm_source: 'direct',
+        utm_medium: 'none',
+        utm_campaign: 'none',
+        utm_term: '',
+        utm_content: '',
+        utm_id: '',
+        gclid: '',
+        msclkid: '',
+        fbclid: '',
+        referrer: document.referrer || 'direct',
+        landing_page: window.location.href,
+        timestamp: new Date().toISOString()
+      };
+
+      // Check referrer as fallback
+      if (document.referrer) {
+        try {
+          const referrerUrl = new URL(document.referrer);
+          const referrerParams = new URLSearchParams(referrerUrl.search);
+          
+          if (referrerParams.get('utm_source') || referrerParams.get('gclid') || referrerParams.get('msclkid')) {
+            tracking.utm_source = referrerParams.get('utm_source') || 
+                                 (referrerParams.get('gclid') ? 'google' : 
+                                 (referrerParams.get('msclkid') ? 'bing' : tracking.utm_source));
+            tracking.utm_medium = referrerParams.get('utm_medium') || 
+                                 (referrerParams.get('gclid') || referrerParams.get('msclkid') ? 'cpc' : 'none');
+            tracking.utm_campaign = referrerParams.get('utm_campaign') || 
+                                   (referrerParams.get('gclid') ? 'google_auto_campaign' :
+                                   (referrerParams.get('msclkid') ? 'bing_auto_campaign' : 'none'));
+            tracking.utm_term = referrerParams.get('utm_term') || '';
+            tracking.utm_content = referrerParams.get('utm_content') || '';
+            tracking.utm_id = referrerParams.get('utm_id') || '';
+            tracking.gclid = referrerParams.get('gclid') || '';
+            tracking.msclkid = referrerParams.get('msclkid') || '';
+            tracking.fbclid = referrerParams.get('fbclid') || '';
+          }
+        } catch (e) {
+          console.log('Could not parse referrer URL');
+        }
+      }
+    }
+    
+    setTrackingData(tracking);
+    localStorage.setItem('adTrackingData', JSON.stringify(tracking));
+  }, []);
 
   useEffect(() => {
     fetch('/carData.json')
@@ -66,15 +156,30 @@ const Form = () => {
     setShowModelDropdown(false);
   };
 
+  // Generate unique lead ID
+  const generateLeadId = () => {
+    return 'LEAD_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors({});
 
     try {
+      const storedTracking = sessionStorage.getItem('adTrackingData') || localStorage.getItem('adTrackingData');
+      const currentTracking = storedTracking ? JSON.parse(storedTracking) : trackingData;
+      
+      const submissionData = {
+        ...formData,
+        tracking: currentTracking,
+        leadId: generateLeadId(),
+        submissionTime: new Date().toISOString()
+      };
+
       const response = await fetch("https://praxxiiglobal.com/api/form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(submissionData),
       });
 
       let result;
@@ -105,6 +210,34 @@ const Form = () => {
         alert(alertMessage);
       } else {
         alert("Form submitted successfully!");
+
+        // ✅ Google Ads Conversion Tracking
+        if (typeof gtag === "function") {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-16900543345/bA93CJSci6YaEPGm5_o-',
+            'event_callback': () => {
+              console.log("✅ Google Ads conversion fired");
+            }
+          });
+        }
+
+        // ✅ Bing UET Conversion Tracking
+        if (typeof uetq !== "undefined") {
+          uetq.push('event', '', {
+            'event_category': 'Lead',
+            'event_action': 'Form Submission',
+            'event_label': 'Praxxii Global Inquiry'
+          });
+          uetq.push('set', {
+            'pid': {
+              'em': formData.email || "",
+              'ph': formData.phone || ""
+            }
+          });
+          console.log("✅ Bing UET event fired");
+        }
+
+        // ✅ Reset form
         setFormData({
           leadLabel: "PRAXXII GLOBAL",
           fullName: "",
