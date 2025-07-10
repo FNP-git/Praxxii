@@ -48,7 +48,7 @@ const Footer = () => {
               <FaInstagram />
             </a>
           </div>
-          <div id="authcert">
+          {/* <div id="authcert">
             <a
               href="https://verify.authorize.net/anetseal/?pid=a3a5c06e-7d73-4d8e-bc10-689e99e27bf0&rurl=https://www.fnpautoparts.com"
               target="_blank"
@@ -56,7 +56,7 @@ const Footer = () => {
             >
               <img id="authc" src={auth} alt="Authorize.net certificate" />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 
