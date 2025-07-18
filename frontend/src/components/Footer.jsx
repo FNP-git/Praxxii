@@ -29,7 +29,7 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Location</h4>
           <p>• Praxxii Global LLC St Suite RSheridan, WY 82801</p>
-          
+          <p>• 3rd Floor,Skymark Building,F-01, F Block, Sector 6, Noida, UP 201301</p>
         </div>
 
         <div className="footer-section social">
